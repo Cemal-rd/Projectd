@@ -1,6 +1,4 @@
-import { BOOL_TYPE } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
-import { AccountService } from '../_services/account.service';
 
 @Component({
   selector: 'app-nav',
@@ -8,28 +6,10 @@ import { AccountService } from '../_services/account.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  model: any={}
 
-  loggedIn: boolean = false;
-
-
-
-  constructor(private accountService:AccountService) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-  login(){
-    this.accountService.login(this.model)
-      .subscribe(response=>{
-      console.log(response);
-      this.loggedIn=true;
-      },error=>{
-        console.log(error);
-      })
-    
-  }
-  logout(){
-    this.loggedIn=false;
   }
 
 }
